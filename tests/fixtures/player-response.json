@@ -1,0 +1,51 @@
+{
+  "responseContext": { "visitorData": "Cgt0ZXN0" },
+  "playabilityStatus": { "status": "OK", "playableInEmbed": true },
+  "streamingData": {
+    "expiresInSeconds": "21540",
+    "formats": [
+      { "itag": 18, "url": "https://rr3---sn-x.googlevideo.com/videoplayback?expire=1", "mimeType": "video/mp4" }
+    ],
+    "adaptiveFormats": [
+      { "itag": 137, "url": "https://rr3---sn-x.googlevideo.com/videoplayback?expire=2", "mimeType": "video/mp4" }
+    ]
+  },
+  "videoDetails": {
+    "videoId": "dQw4w9WgXcQ",
+    "title": "Test video",
+    "lengthSeconds": "1800",
+    "author": "Test channel"
+  },
+  "captions": {
+    "playerCaptionsTracklistRenderer": { "captionTracks": [{ "languageCode": "en" }] }
+  },
+  "storyboards": { "playerStoryboardSpecRenderer": { "spec": "https://i.ytimg.com/sb" } },
+  "microformat": { "playerMicroformatRenderer": { "lengthSeconds": "1800" } },
+  "adPlacements": [
+    {
+      "adPlacementRenderer": {
+        "config": { "adPlacementConfig": { "kind": "AD_PLACEMENT_KIND_START" } },
+        "renderer": { "linearAdSequenceRenderer": { "linearAds": [{ "instreamVideoAdRenderer": {} }] } }
+      }
+    },
+    {
+      "adPlacementRenderer": {
+        "config": {
+          "adPlacementConfig": {
+            "kind": "AD_PLACEMENT_KIND_MILLISECONDS",
+            "adTimeOffset": { "offsetStartMilliseconds": "420000" }
+          }
+        },
+        "renderer": { "linearAdSequenceRenderer": { "linearAds": [{ "instreamVideoAdRenderer": {} }] } }
+      }
+    }
+  ],
+  "adSlots": [{ "adSlotRenderer": { "adSlotMetadata": { "slotId": "0" } } }],
+  "playerAds": [{ "playerLegacyDesktopWatchAdsRenderer": { "playerAdParams": {} } }],
+  "adBreakHeartbeatParams": "Q2dOaGN3JTNEJTNE",
+  "auxiliaryUi": {
+    "messageRenderers": {
+      "upsellDialogRenderer": { "dialogMessage": { "runs": [{ "text": "Ad blockers violate" }] } }
+    }
+  }
+}

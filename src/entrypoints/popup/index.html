@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdPrune</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <rect x="1" y="1" width="22" height="22" rx="5.5" fill="currentColor" />
+          <path d="M9 7.4 L15.6 12 L9 16.6 Z" fill="#fff" />
+          <line x1="4" y1="20" x2="20" y2="4" stroke="currentColor" stroke-width="5" />
+          <line
+            x1="4"
+            y1="20"
+            x2="20"
+            y2="4"
+            stroke="#fff"
+            stroke-width="2.2"
+            stroke-linecap="round"
+          />
+        </svg>
+        <h1>AdPrune</h1>
+      </div>
+
+      <label class="master">
+        <span class="visually-hidden">Enable AdPrune</span>
+        <input type="checkbox" id="enabled" class="switch" />
+      </label>
+    </header>
+
+    <section class="hero" aria-live="polite">
+      <p class="status" id="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="status-text">Active</span>
+      </p>
+
+      <p class="hero-value" id="stat-total">0</p>
+      <p class="hero-label" id="stat-total-label">ads blocked</p>
+
+      <div class="split">
+        <div class="split-cell">
+          <span class="split-value" id="stat-instream">0</span>
+          <span class="split-label">video ads</span>
+        </div>
+        <div class="split-cell">
+          <span class="split-value" id="stat-cosmetic">0</span>
+          <span class="split-label">page ads</span>
+        </div>
+      </div>
+    </section>
+
+    <p class="notice" id="ssai-notice" hidden>
+      <strong>Server-stitched ads detected.</strong> These are baked into the video
+      stream itself and cannot be removed from the browser.
+    </p>
+
+    <section class="group">
+      <h2 class="group-title">Blocking</h2>
+      <div class="rows" id="rows-blocking"></div>
+    </section>
+
+    <section class="group">
+      <h2 class="group-title">Advanced</h2>
+      <div class="rows" id="rows-advanced"></div>
+    </section>
+
+    <footer class="footer">
+      <button type="button" id="reset" class="ghost-button">Reset counters</button>
+    </footer>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

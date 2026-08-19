@@ -1,0 +1,371 @@
+/**
+ * Green is doing real work here, not decoration: it is the validation colour,
+ * and this panel exists to confirm "ads are being removed". State is never
+ * signalled by colour alone — the status pill pairs it with a text label.
+ */
+
+:root {
+  color-scheme: light;
+
+  --accent: #2e7d32;
+  --accent-hover: #276b2b;
+  /* Tint is set by contrast, not taste: #2e7d32 on #e8f2e9 measured 4.47:1,
+     just under the 4.5 needed for the small uppercase status text. */
+  --accent-soft: #ecf5ed;
+  --accent-ring: #2e7d32;
+
+  --bg: #ffffff;
+  --surface: #f5f8f5;
+  --surface-hover: #eef3ef;
+  --border: #e0e6e1;
+
+  --fg: #15201a;
+  --muted: #5c6660;
+
+  --radius: 10px;
+  --radius-sm: 7px;
+  --transition: 120ms ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    /* #2e7d32 fails contrast on a dark ground, so the accent lightens rather
+       than staying "on brand" at the cost of legibility. */
+    --accent: #7cc47f;
+    --accent-hover: #93d195;
+    --accent-soft: #1b2a1d;
+    --accent-ring: #7cc47f;
+
+    --bg: #131513;
+    --surface: #1c201d;
+    --surface-hover: #232823;
+    --border: #2e342f;
+
+    --fg: #e9ede9;
+    --muted: #9ba59d;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 380px;
+  margin: 0;
+  padding: 14px;
+  background: var(--bg);
+  color: var(--fg);
+  font:
+    13px/1.45 system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Every focusable control gets the same ring: WCAG 1.4.11 wants at least 3:1
+   against adjacent colours, and the offset keeps it visible on filled shapes. */
+:focus-visible {
+  outline: 2px solid var(--accent-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── header ─────────────────────────────────────────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mark {
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+  flex: none;
+}
+
+h1 {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 640;
+  letter-spacing: -0.01em;
+}
+
+.master {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ── switch ─────────────────────────────────────────────────────────────── */
+
+.switch {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 34px;
+  height: 20px;
+  margin: 0;
+  flex: none;
+  background: var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.3);
+  transition: transform var(--transition);
+}
+
+.switch:checked {
+  background: var(--accent);
+}
+
+.switch:checked::after {
+  transform: translateX(14px);
+}
+
+.switch:hover:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+/* ── hero ───────────────────────────────────────────────────────────────── */
+
+.hero {
+  padding: 14px 12px 12px;
+  margin-bottom: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 6px;
+  padding: 2px 9px 2px 7px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+body[data-enabled='false'] .status {
+  background: var(--surface-hover);
+  color: var(--muted);
+}
+
+.hero-value {
+  margin: 0;
+  font-size: 38px;
+  line-height: 1.05;
+  font-weight: 680;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-label {
+  margin: 2px 0 0;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.split-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.split-value {
+  font-size: 15px;
+  font-weight: 640;
+  font-variant-numeric: tabular-nums;
+}
+
+.split-label {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── notice ─────────────────────────────────────────────────────────────── */
+
+.notice {
+  margin: 0 0 10px;
+  padding: 9px 10px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--fg);
+}
+
+.notice strong {
+  font-weight: 620;
+}
+
+/* ── toggle groups ──────────────────────────────────────────────────────── */
+
+.group {
+  margin-bottom: 10px;
+}
+
+.group-title {
+  margin: 0 0 4px 2px;
+  font-size: 10px;
+  font-weight: 640;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rows {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.row + .row {
+  border-top: 1px solid var(--border);
+}
+
+.row:hover {
+  background: var(--surface-hover);
+}
+
+.row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.row-title {
+  font-size: 12.5px;
+}
+
+.row-hint {
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.row .switch {
+  margin-left: auto;
+}
+
+/* Master off dims the detail controls but keeps them readable, so the panel
+   still explains what it would do rather than going blank. */
+body[data-enabled='false'] .group,
+body[data-enabled='false'] .hero-value,
+body[data-enabled='false'] .split {
+  opacity: 0.5;
+}
+
+body[data-enabled='false'] .group {
+  pointer-events: none;
+}
+
+/* ── footer ─────────────────────────────────────────────────────────────── */
+
+.footer {
+  margin-top: 12px;
+}
+
+.ghost-button {
+  width: 100%;
+  padding: 8px;
+  font: inherit;
+  font-size: 12px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.ghost-button:hover {
+  background: var(--surface-hover);
+  color: var(--fg);
+  border-color: var(--muted);
+}
+
+.ghost-button:active {
+  transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

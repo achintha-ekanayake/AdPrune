@@ -1,0 +1,12 @@
+{
+  // WXT generates .wxt/tsconfig.json with the path aliases (@/*) and the
+  // include globs. Those are resolved relative to .wxt/, so they are inherited
+  // rather than restated here — overriding them breaks alias resolution.
+  "extends": "./.wxt/tsconfig.json",
+  "compilerOptions": {
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": false
+  }
+}

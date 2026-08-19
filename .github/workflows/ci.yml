@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # The core suite is the real gate: it asserts ad fields are removed AND
+      # that playback-critical fields survive. A reckless prune pattern fails
+      # here rather than in someone's browser.
+      - run: npm test
+      - run: npm run compile
+      - run: npm run lint
+
+      # Both targets must build; Firefox exercises a different Layer 4 path.
+      - run: npm run build:chrome
+      - run: npm run build:firefox

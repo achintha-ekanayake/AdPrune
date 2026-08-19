@@ -1,0 +1,24 @@
+{
+  "contents": {
+    "twoColumnBrowseResultsRenderer": {
+      "tabs": [
+        {
+          "tabRenderer": {
+            "content": {
+              "richGridRenderer": {
+                "contents": [
+                  { "richItemRenderer": { "content": { "videoRenderer": { "videoId": "keep-1" } } } },
+                  { "richItemRenderer": { "content": { "adSlotRenderer": { "adSlotMetadata": {} } } } },
+                  { "adSlotRenderer": { "adSlotMetadata": { "slotId": "feed-0" } } },
+                  { "richItemRenderer": { "content": { "videoRenderer": { "videoId": "keep-2" } } } },
+                  { "promotedSparklesWebRenderer": { "websiteText": "Sponsored" } },
+                  { "richSectionRenderer": { "content": { "statementBannerRenderer": { "text": "promo" } } } }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
