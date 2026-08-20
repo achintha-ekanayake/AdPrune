@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy - AdPrune</title>
+    <meta
+      name="description"
+      content="AdPrune's privacy policy. AdPrune collects no personal data, transmits nothing off your device, uses no analytics and has no servers. Settings and counters are stored in local extension storage only."
+    />
+    <meta name="theme-color" content="#2e7d32" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#101210" media="(prefers-color-scheme: dark)" />
+    <link
+      rel="canonical"
+      href="https://achintha-ekanayake.github.io/AdPrune/privacy.html"
+    />
+    <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Defined once, referenced by <use> everywhere else. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="mark" viewBox="0 0 24 24">
+        <rect x="1" y="1" width="22" height="22" rx="5.5" fill="currentColor" />
+        <path d="M9 7.4 L15.6 12 L9 16.6 Z" fill="#fff" />
+        <line x1="4" y1="20" x2="20" y2="4" stroke="currentColor" stroke-width="5" />
+        <line
+          x1="4"
+          y1="20"
+          x2="20"
+          y2="4"
+          stroke="#fff"
+          stroke-width="2.2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol
+        id="i-check"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M20 6 9 17l-5-5" />
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="./">
+          <svg aria-hidden="true"><use href="#mark" /></svg>
+          AdPrune
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav-keep" href="./#install">Install</a>
+          <a href="./#how">How it works</a>
+          <a href="./#permissions">Permissions</a>
+          <a href="./#limits">Limitations</a>
+          <a href="https://github.com/achintha-ekanayake/AdPrune" rel="noopener"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap wrap--narrow doc-header">
+        <span class="eyebrow">Legal</span>
+        <h1>Privacy Policy</h1>
+        <p class="doc-dates">
+          <span>Effective: 20 August 2026</span>
+          <span>Last updated: 20 August 2026</span>
+          <span>Applies to: AdPrune browser extension, all versions</span>
+        </p>
+
+        <!-- The honest summary sits above the legal prose, because that is where
+             it will actually be read. Everything below only expands on it. -->
+        <div class="summary-box">
+          <h2>The short version</h2>
+          <p>
+            AdPrune does not collect, store, transmit, sell or share any personal data.
+            It has no servers, no accounts, no analytics and no third-party code. Your
+            settings and your blocked-ad counters are written to your browser's local
+            extension storage and never leave your device.
+          </p>
+          <ul class="summary-list">
+            <li>
+              <svg aria-hidden="true"><use href="#i-check" /></svg>No data is sent
+              anywhere
+            </li>
+            <li>
+              <svg aria-hidden="true"><use href="#i-check" /></svg>No analytics or
+              telemetry
+            </li>
+            <li>
+              <svg aria-hidden="true"><use href="#i-check" /></svg>No account or sign-in
+            </li>
+            <li>
+              <svg aria-hidden="true"><use href="#i-check" /></svg>No browsing history
+              access
+            </li>
+            <li>
+              <svg aria-hidden="true"><use href="#i-check" /></svg>No cookies read or
+              written
+            </li>
+            <li>
+              <svg aria-hidden="true"><use href="#i-check" /></svg>No third-party
+              services
+            </li>
+          </ul>
+        </div>
+
+        <nav class="toc" aria-label="Table of contents">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#who">Who this policy is from</a></li>
+            <li><a href="#collect">What AdPrune collects</a></li>
+            <li><a href="#stored">What is stored on your device</a></li>
+            <li><a href="#never">What is never collected</a></li>
+            <li><a href="#permissions">Permissions and why they exist</a></li>
+            <li><a href="#network">Network activity</a></li>
+            <li><a href="#youtube">Your relationship with YouTube</a></li>
+            <li><a href="#third-parties">Third parties and remote code</a></li>
+            <li><a href="#retention">Retention and deletion</a></li>
+            <li><a href="#rights">GDPR, UK GDPR and CCPA/CPRA</a></li>
+            <li><a href="#children">Children's privacy</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#changes">Changes to this policy</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="wrap wrap--narrow doc">
+        <section id="who">
+          <h2>1. Who this policy is from</h2>
+          <p>
+            AdPrune ("AdPrune", "the extension") is a free, open-source browser
+            extension distributed under the MIT licence. This policy describes how the
+            extension handles data. It covers the extension itself and this website.
+          </p>
+          <p>
+            AdPrune is an independent project. It is not affiliated with, endorsed by,
+            or connected to YouTube, Google LLC, Alphabet Inc., Mozilla, or Microsoft.
+          </p>
+          <p>
+            Because AdPrune is open source, every statement in this policy can be
+            verified against the published source code at
+            <a href="https://github.com/achintha-ekanayake/AdPrune" rel="noopener"
+              >github.com/achintha-ekanayake/AdPrune</a
+            >. Where this policy and the source code ever disagree, treat that as a bug
+            and please report it.
+          </p>
+        </section>
+
+        <section id="collect">
+          <h2>2. What AdPrune collects</h2>
+          <p>
+            <strong>Nothing.</strong> AdPrune does not collect personal data or any
+            other user data. There is no server to send data to, no analytics package,
+            no crash reporter, no advertising identifier and no unique installation ID.
+          </p>
+          <p>
+            The extension operates entirely within your browser. It is not capable of
+            transmitting your data, because it never initiates a network request of its
+            own to any destination.
+          </p>
+        </section>
+
+        <section id="stored">
+          <h2>3. What is stored on your device</h2>
+          <p>
+            AdPrune writes two items to your browser's local extension storage area
+            (<code>storage.local</code>). This area is private to the extension, lives
+            on your machine, and is not part of browser sync.
+          </p>
+
+          <div class="table-scroll">
+            <table>
+              <caption class="visually-hidden">
+                Data AdPrune stores locally
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Item</th>
+                  <th scope="col">Contents</th>
+                  <th scope="col">Why</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>settings</code></td>
+                  <td>
+                    Your on/off toggles - master switch, video-ad blocking, page-ad
+                    hiding, the skip fallback, network rules, debug logging.
+                    <span class="sub"
+                      >A handful of true/false values and a list of enabled selector
+                      groups.</span
+                    >
+                  </td>
+                  <td>So the extension behaves the way you configured it.</td>
+                </tr>
+                <tr>
+                  <td><code>stats</code></td>
+                  <td>
+                    Counters: how many ads were blocked, broken down by which layer
+                    caught them; how many server-stitched streams were seen; and which
+                    internal prune patterns have fired at least once.
+                    <span class="sub"
+                      >Numbers and internal rule names only. No video titles, no URLs,
+                      no channel names, no timestamps.</span
+                    >
+                  </td>
+                  <td>
+                    To show the counters in the popup and the badge, and to let unused
+                    rules be retired.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            Neither item is personal data. Neither is transmitted. You can erase the
+            counters at any time with <strong>Reset counters</strong> in the popup, and
+            you can erase everything by uninstalling the extension.
+          </p>
+        </section>
+
+        <section id="never">
+          <h2>4. What is never collected</h2>
+          <p>To state it explicitly, AdPrune does not collect, log, or transmit:</p>
+          <ul>
+            <li>
+              Personally identifiable information - name, email address, age, or any
+              identifier
+            </li>
+            <li>
+              Authentication information - passwords, credentials, security questions
+            </li>
+            <li>Financial or payment information</li>
+            <li>Health information</li>
+            <li>
+              Personal communications - messages, comments, or anything you type on a
+              page
+            </li>
+            <li>Location data of any kind</li>
+            <li>
+              Web history, browsing activity, referrers, or a list of the sites you
+              visit
+            </li>
+            <li>
+              Which videos you watch, which channels you follow, or your YouTube account
+              details
+            </li>
+            <li>
+              User activity - clicks, mouse position, scroll depth, keystrokes, session
+              recordings
+            </li>
+            <li>Cookies, local storage, or session tokens belonging to any website</li>
+            <li>
+              Device or hardware identifiers, IP address, or user-agent fingerprints
+            </li>
+          </ul>
+          <p>
+            AdPrune requests no permission that would make most of the above technically
+            possible in the first place. See section 5.
+          </p>
+        </section>
+
+        <section id="permissions">
+          <h2>5. Permissions and why they exist</h2>
+          <p>
+            Chrome Web Store policy requires that data use be limited to an extension's
+            single disclosed purpose. AdPrune's single purpose is
+            <em>removing advertisements from YouTube</em>, and every permission below
+            exists solely to serve it.
+          </p>
+
+          <div class="table-scroll">
+            <table>
+              <caption class="visually-hidden">
+                Permissions requested and their justification
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Permission</th>
+                  <th scope="col">Justification</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>storage</code></td>
+                  <td>
+                    To save the two local items described in section 3.
+                    <span class="sub"
+                      >Only <code>storage.local</code> is used. Browser sync storage is
+                      not used, so nothing is copied to your browser account or to other
+                      devices.</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>declarativeNetRequest</code></td>
+                  <td>
+                    To supply the browser with a static, pre-declared list of ad-network
+                    and ad-tracking hosts to block.
+                    <span class="sub"
+                      >This API is deliberately privacy-preserving: the rules are
+                      shipped inside the extension and enforced by the browser. AdPrune
+                      is not told which requests matched, and cannot read the contents
+                      of any request.</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="wrap-cell"><code>*://*.youtube.com/*</code></td>
+                  <td>
+                    To run the ad-pruning content scripts on YouTube pages.
+                    <span class="sub"
+                      >Page content is inspected in memory to find and remove ad
+                      elements and ad metadata. Nothing observed is stored or
+                      sent.</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="wrap-cell"><code>*://*.youtube-nocookie.com/*</code></td>
+                  <td>
+                    The same, for embedded YouTube players, which serve their own
+                    pre-rolls.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="wrap-cell"><code>*://*.googlevideo.com/*</code></td>
+                  <td>
+                    To recognise server-stitched (SSAI) advertising markers in media
+                    manifests, so the popup can tell you when an ad cannot be removed.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            AdPrune does <strong>not</strong> request the <code>tabs</code>,
+            <code>history</code>, <code>cookies</code>, <code>bookmarks</code>,
+            <code>downloads</code>, <code>identity</code>, <code>webRequest</code>,
+            <code>scripting</code> or <code>&lt;all_urls&gt;</code> permissions. It has
+            no access to any website other than the three hosts listed above.
+          </p>
+
+          <h3>Firefox data-collection disclosure</h3>
+          <p>
+            On Firefox, AdPrune declares
+            <code>data_collection_permissions: { required: ["none"] }</code> in its
+            manifest - Mozilla's formal, browser-enforced declaration that an extension
+            collects and transmits no personal data. Firefox shows this to you on the
+            install prompt, on the add-on's listing page, and in
+            <code>about:addons</code>.
+          </p>
+        </section>
+
+        <section id="network">
+          <h2>6. Network activity</h2>
+          <p>AdPrune originates no network requests. Specifically:</p>
+          <ul>
+            <li>
+              It contacts no server operated by the AdPrune project, because no such
+              server exists.
+            </li>
+            <li>
+              It downloads no filter lists, rulesets, configuration or code at runtime.
+              Every rule is compiled into the extension package at build time.
+            </li>
+            <li>It performs no update checks of its own; that is the browser's job.</li>
+          </ul>
+          <p>
+            The extension does <em>observe and modify</em> requests that YouTube's own
+            page code makes, which is how ad metadata is removed before the player reads
+            it. That interception is scoped to a short published list of YouTube API
+            endpoints, it happens entirely inside your browser's memory, and no observed
+            content is retained after the response is handed back to the page.
+          </p>
+          <p>
+            Notably, AdPrune <em>prunes</em> the player response rather than blocking
+            it, since that same response carries the playback manifest for the video you
+            asked for.
+          </p>
+        </section>
+
+        <section id="youtube">
+          <h2>7. Your relationship with YouTube</h2>
+          <p>
+            AdPrune changes what YouTube's page code does inside your browser. It does
+            not change your relationship with YouTube or Google, who continue to collect
+            data about your use of their service according to
+            <a href="https://policies.google.com/privacy" rel="noopener nofollow"
+              >their own privacy policy</a
+            >. Installing AdPrune does not make you anonymous to YouTube, and it is not
+            a privacy tool or a tracker blocker.
+          </p>
+          <div class="callout">
+            <strong>Worth knowing:</strong> client-side ad filtering is legal and
+            long-established, but it does violate YouTube's Terms of Service. YouTube
+            may respond by degrading playback, showing interstitials, or taking action
+            against accounts it detects. That risk is yours to weigh, and it is not
+            something this policy - or the extension - can protect you from.
+          </div>
+        </section>
+
+        <section id="third-parties">
+          <h2>8. Third parties and remote code</h2>
+          <p>
+            AdPrune contains no third-party analytics SDKs, advertising libraries, tag
+            managers, error reporters, or tracking pixels. No data is sold, rented,
+            shared, or disclosed to anyone, for the simple reason that none is held.
+          </p>
+          <p>
+            AdPrune executes no remotely hosted code. All logic is contained in the
+            extension package you installed, which is exactly what both the Chrome Web
+            Store and Mozilla require, and it means the extension cannot silently change
+            behaviour between updates.
+          </p>
+          <p>
+            This website is served as static files by GitHub Pages. It sets no cookies,
+            runs no JavaScript, loads no fonts or resources from other domains, and
+            includes no analytics. GitHub may keep standard server access logs for the
+            requests that deliver these pages; see the
+            <a
+              href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+              rel="noopener nofollow"
+              >GitHub Privacy Statement</a
+            >.
+          </p>
+        </section>
+
+        <section id="retention">
+          <h2>9. Retention and deletion</h2>
+          <p>
+            Because nothing is collected, there is nothing being retained by anyone. The
+            two local items in section 3 stay on your device for as long as the
+            extension is installed, and are under your control:
+          </p>
+          <ul>
+            <li>
+              <strong>Clear the counters:</strong> open the AdPrune popup and choose
+              <strong>Reset counters</strong>.
+            </li>
+            <li>
+              <strong>Restore defaults:</strong> toggle the settings back, or remove and
+              reinstall the extension.
+            </li>
+            <li>
+              <strong>Erase everything:</strong> uninstall AdPrune. Browsers delete an
+              extension's local storage when it is removed.
+            </li>
+          </ul>
+        </section>
+
+        <section id="rights">
+          <h2>10. GDPR, UK GDPR and CCPA/CPRA</h2>
+          <p>
+            AdPrune does not process personal data, so it does not act as a data
+            controller or data processor in relation to any user.
+          </p>
+          <p>
+            The rights those laws grant - access, rectification, erasure, portability,
+            restriction, objection, and the right to opt out of sale or sharing - are
+            satisfied by default: there is no data to access, correct, export, or
+            delete, and nothing is ever sold or shared. AdPrune does not sell or share
+            personal information as those terms are defined under the CCPA/CPRA, and has
+            not done so in the preceding twelve months. There is no cross-context
+            behavioural advertising, and no profiling or automated decision-making.
+          </p>
+          <p>
+            No data transfer occurs, internationally or otherwise, because no data
+            leaves your device.
+          </p>
+        </section>
+
+        <section id="children">
+          <h2>11. Children's privacy</h2>
+          <p>
+            AdPrune is not directed at children and does not knowingly collect
+            information from anyone, of any age. It collects no data from any user, so
+            it cannot collect data from a child. It complies with COPPA by design rather
+            than by procedure.
+          </p>
+        </section>
+
+        <section id="security">
+          <h2>12. Security</h2>
+          <p>
+            The strongest security property of AdPrune is that it holds nothing worth
+            stealing. There is no database, no account system, and no server that could
+            be breached.
+          </p>
+          <p>
+            Locally, settings and counters live in the browser's extension storage,
+            which is isolated from web pages and from other extensions by the browser
+            itself. Beyond that, the extension is protected by being small,
+            dependency-free at runtime, and fully readable: the ad-detection core
+            imports no browser APIs and is covered by an automated test suite that runs
+            on every commit.
+          </p>
+          <p>
+            If you believe you have found a security or privacy issue, please report it
+            through
+            <a
+              href="https://github.com/achintha-ekanayake/AdPrune/issues"
+              rel="noopener"
+              >GitHub issues</a
+            >.
+          </p>
+        </section>
+
+        <section id="changes">
+          <h2>13. Changes to this policy</h2>
+          <p>
+            If AdPrune's data practices ever change, this policy will be updated before
+            the change ships, the "Last updated" date at the top will change, and - as
+            Chrome Web Store policy requires for any post-installation change in data
+            handling - the change will be disclosed prominently in the extension itself
+            and in the release notes, not quietly edited into this page.
+          </p>
+          <p>
+            The full revision history of this page is public in the project's Git
+            history, so you can diff any two versions of it yourself.
+          </p>
+        </section>
+
+        <section id="contact">
+          <h2>14. Contact</h2>
+          <p>
+            Questions about this policy, or about what the extension does, are best
+            raised in public where the answer helps the next person:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/achintha-ekanayake/AdPrune/issues"
+                rel="noopener"
+                >Open an issue on GitHub</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/achintha-ekanayake/AdPrune" rel="noopener"
+                >Read the source code</a
+              >
+            </li>
+          </ul>
+          <!-- TODO: store listings require a reachable contact address. Add the
+               developer contact email here before submitting to the Chrome Web
+               Store or addons.mozilla.org. -->
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          AdPrune - MIT licensed. Not affiliated with, endorsed by, or connected to
+          YouTube or Google.
+        </p>
+        <nav aria-label="Footer">
+          <a href="./">Home</a>
+          <a href="https://github.com/achintha-ekanayake/AdPrune" rel="noopener"
+            >Source</a
+          >
+          <a href="https://github.com/achintha-ekanayake/AdPrune/issues" rel="noopener"
+            >Report an issue</a
+          >
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

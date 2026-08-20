@@ -8,13 +8,13 @@ Deliberately conservative, and it should stay that way.
 
 **What is deliberately NOT blocked, and why:**
 
-- `/youtubei/v1/player` — this carries the ad metadata *and* the playback
+- `/youtubei/v1/player` - this carries the ad metadata *and* the playback
   manifest. Blocking it does not remove ads, it removes the video. Layer 1
   prunes this response instead of blocking it.
-- `/youtubei/v1/log_event` — YouTube notices when its telemetry goes silent.
+- `/youtubei/v1/log_event` - YouTube notices when its telemetry goes silent.
   A blocked log endpoint is a cheap adblock signal, and blocking it buys
   nothing.
-- `*.googlevideo.com/videoplayback` — the media stream itself.
+- `*.googlevideo.com/videoplayback` - the media stream itself.
 
 The general principle: this layer exists to stop ad *networks*, not to fight
 YouTube's first-party delivery. First-party is Layer 1's job, and it does it

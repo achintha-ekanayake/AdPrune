@@ -74,7 +74,7 @@ export class CosmeticEngine {
       try {
         matches = document.querySelectorAll(selector);
       } catch {
-        continue; // `:has()` on an engine that lacks it — skip, don't die.
+        continue; // `:has()` on an engine that lacks it - skip, don't die.
       }
       for (const element of matches) {
         if (element.hasAttribute(HIDDEN_ATTR)) continue;

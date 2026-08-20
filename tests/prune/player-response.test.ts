@@ -16,7 +16,7 @@ function fixture(name: string): JsonObject {
 
 /**
  * Acceptance tests for the whole project: ads go away, playback does not.
- * The second matters more — a missed ad annoys, a pruned `streamingData` is a
+ * The second matters more - a missed ad annoys, a pruned `streamingData` is a
  * black screen.
  */
 describe('default ruleset against a real player response', () => {

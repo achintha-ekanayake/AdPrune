@@ -12,7 +12,7 @@ export interface PruneRuleset {
   remove: readonly string[];
   /**
    * If an array element is an object holding any of these keys, the whole
-   * element is spliced out — deleting just the key leaves a husk that YouTube
+   * element is spliced out - deleting just the key leaves a husk that YouTube
    * renders as a blank card and may still count in its layout.
    */
   dropArrayItemsWithKeys: readonly string[];

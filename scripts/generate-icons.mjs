@@ -1,5 +1,5 @@
 /**
- * Generates the extension icons as PNGs — in code rather than committed
+ * Generates the extension icons as PNGs - in code rather than committed
  * binaries, so the set is reproducible and reviewable in a diff. A green
  * rounded square with a slashed play mark, drawn at 4x and box-downsampled to
  * keep the diagonal smooth. Run `npm run icons` after changing anything here.

@@ -4,7 +4,7 @@ import { shouldInterceptUrl } from '@/core/net/url-patterns';
 import type { JsonValue } from '@/core/types';
 
 /**
- * The legacy path — some InnerTube calls still go over XHR and would bypass the
+ * The legacy path - some InnerTube calls still go over XHR and would bypass the
  * other two hooks. `responseText` is read-only on the prototype, so it is
  * overridden per-instance once the request completes.
  */
@@ -19,7 +19,7 @@ export function installXhrHook(): void {
         try {
           urls.set(this, String(url));
         } catch {
-          /* ignore — worst case we simply don't intercept this request */
+          /* ignore - worst case we simply don't intercept this request */
         }
         return (original as XMLHttpRequest['open']).call(
           this,

@@ -1,7 +1,7 @@
 /**
  * Green is doing real work here, not decoration: it is the validation colour,
  * and this panel exists to confirm "ads are being removed". State is never
- * signalled by colour alone — the status pill pairs it with a text label.
+ * signalled by colour alone - the status pill pairs it with a text label.
  */
 
 :root {

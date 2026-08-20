@@ -1,6 +1,6 @@
 /**
  * Server-side ad insertion. Stitched ads are video frames, not schedulable
- * metadata, so nothing in the page removes them cleanly — only `ctier=SA`/`SR`
+ * metadata, so nothing in the page removes them cleanly - only `ctier=SA`/`SR`
  * markers survive. `detectSsai` is reliable and drives the UI notice;
  * `scrubDashManifest` is best effort and useless against UMP/protobuf.
  */

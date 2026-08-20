@@ -1,6 +1,6 @@
 /**
  * Path-pattern matcher as an NFA, so the tree is walked once with no per-node
- * string allocation — it runs inside `JSON.parse` on every InnerTube response.
+ * string allocation - it runs inside `JSON.parse` on every InnerTube response.
  *
  * Syntax: `a.b.c` exact from root, `*` one segment, `**` zero or more.
  */
@@ -49,7 +49,7 @@ export function initialStates(patterns: readonly CompiledPattern[]): MatchState[
 
 /**
  * Advance every live state across one path segment. Returns states surviving
- * into the child, plus patterns fully consumed here — those keys are targets.
+ * into the child, plus patterns fully consumed here - those keys are targets.
  */
 export function step(
   states: readonly MatchState[],
@@ -85,7 +85,7 @@ function advance(
   if (!matches) return;
 
   if (offset + 1 >= pattern.segments.length) {
-    // Whole pattern consumed — this key is a deletion target.
+    // Whole pattern consumed - this key is a deletion target.
     if (!terminal.includes(pattern)) terminal.push(pattern);
   } else {
     pushUnique(next, pattern, offset + 1);

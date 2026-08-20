@@ -1,6 +1,6 @@
 {
   "name": "adprune",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "Cross-browser MV3 extension that removes YouTube in-stream (pre/mid/post-roll) and cosmetic ads.",

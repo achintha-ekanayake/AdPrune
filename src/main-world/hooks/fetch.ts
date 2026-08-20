@@ -46,7 +46,7 @@ function resolveUrl(input: RequestInfo | URL, response: Response): string {
 /**
  * A Response whose body is the pruned payload. Rebuilt from text rather than
  * patching `.json()`, because the player reads some responses via `.text()`
- * and some via `.json()` — this works for both without guessing.
+ * and some via `.json()` - this works for both without guessing.
  */
 async function wrapResponse(response: Response): Promise<Response> {
   const clone = response.clone();
@@ -58,7 +58,7 @@ async function wrapResponse(response: Response): Promise<Response> {
   try {
     payload = JSON.parse(text) as JsonValue;
   } catch {
-    return response; // Not JSON after all — hand back the original untouched.
+    return response; // Not JSON after all - hand back the original untouched.
   }
 
   const result = context.process(payload, 'fetch');

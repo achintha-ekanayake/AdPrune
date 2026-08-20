@@ -6,7 +6,7 @@ import type { JsonValue } from '@/core/types';
  * Catches the cold-load bootstrap payload, inlined as an object literal
  * that never touches `JSON.parse` or the network. Defining an accessor
  * before that script runs means the top-level `var` assignment hits our
- * setter — hence `run_at: document_start`.
+ * setter - hence `run_at: document_start`.
  */
 const BOOTSTRAP_GLOBALS = ['ytInitialPlayerResponse', 'ytInitialData'] as const;
 

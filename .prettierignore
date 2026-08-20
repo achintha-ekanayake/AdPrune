@@ -1,0 +1,8 @@
+node_modules
+.output
+.wxt
+package-lock.json
+
+# Prettier has no parser for these; `--write .` errors out rather than skipping.
+site/.nojekyll
+*.svg

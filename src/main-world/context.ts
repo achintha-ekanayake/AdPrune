@@ -11,7 +11,7 @@ import { createLogger } from '@/shared/logger';
 /**
  * Shared state for every MAIN-world hook. Settings arrive from the
  * isolated world after the hooks install, so they are read through this
- * mutable context rather than captured — otherwise the first player request,
+ * mutable context rather than captured - otherwise the first player request,
  * the one carrying the pre-roll, would use stale defaults.
  */
 class MainWorldContext {

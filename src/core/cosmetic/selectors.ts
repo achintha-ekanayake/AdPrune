@@ -1,5 +1,5 @@
 /**
- * Selector registry for the cosmetic layer — the second maintenance surface
+ * Selector registry for the cosmetic layer - the second maintenance surface
  * after `prune/paths.ts`, grouped so a layout change invalidates one group.
  * Keep selectors specific: a loose `[class*="ad"]` also matches things like
  * `ytd-thumbnail-overlay-loading-preview`, so anchor on YouTube's elements.

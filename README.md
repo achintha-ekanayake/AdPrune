@@ -2,6 +2,9 @@
 
 **Remove YouTube in-stream ads before playback schedules them.**
 
+[Website](https://achintha-ekanayake.github.io/AdPrune/) ·
+[Privacy policy](https://achintha-ekanayake.github.io/AdPrune/privacy.html)
+
 AdPrune is a cross-browser MV3 extension for developers who want a focused,
 testable YouTube ad-pruning architecture. It targets pre-roll, mid-roll, and
 post-roll video ads as well as on-page ad units.
@@ -89,7 +92,7 @@ YouTube fingerprints blockers behaviourally, so three things are deliberate:
   functions still report `[native code]`, including the mask itself.
 - **Nothing load-bearing is blocked.** `/youtubei/v1/player` carries the
   playback manifest as well as the ads, and silent telemetry is itself a signal
-  — so Layer 1 _prunes_ rather than blocks. See [docs/network-rules.md](docs/network-rules.md).
+  - so Layer 1 _prunes_ rather than blocks. See [docs/network-rules.md](docs/network-rules.md).
 
 ---
 
@@ -120,7 +123,7 @@ Chrome.
 1. Capture the new `/youtubei/v1/player` response from DevTools → Network.
 2. Save it to `tests/fixtures/`.
 3. Add the new field path to `src/core/prune/paths.ts`.
-4. `npm test` — the fixture locks that regression shut permanently.
+4. `npm test` - the fixture locks that regression shut permanently.
 
 For page ads, the equivalent file is `src/core/cosmetic/selectors.ts`.
 
@@ -139,7 +142,7 @@ Two rules when editing the prune paths:
 
 **Server-side ad insertion (SSAI) is not solved, here or anywhere.** When
 YouTube stitches ads into the media stream itself, the ad is video frames in the
-same bytes as the content — no client-side blocker can cleanly remove it. This
+same bytes as the content - no client-side blocker can cleanly remove it. This
 extension _detects_ it (via `ctier=SA`/`ctier=SR` markers) and tells you in the
 popup rather than silently appearing broken. `scrubDashManifest` makes a
 best-effort attempt on text manifests only.
@@ -147,7 +150,7 @@ best-effort attempt on text manifests only.
 **Chrome is structurally weaker than Firefox.** MV3 removed blocking
 `webRequest`, so Layer 4 on Chrome is limited to pre-declared static rules.
 Firefox retains blocking `webRequest` under MV3. Layer 1 carries the load on
-both, which is why the JSON layer — not the network layer — is the primary
+both, which is why the JSON layer - not the network layer - is the primary
 defense.
 
 **This is an arms race.** YouTube has shipped repeated enforcement waves and

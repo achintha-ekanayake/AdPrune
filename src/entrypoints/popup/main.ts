@@ -138,7 +138,7 @@ function renderStats(stats: Stats): void {
 
   // Empty state: a bare "0" reads as broken, so say what to do instead.
   byId('stat-total-label').textContent =
-    stats.total === 0 ? 'nothing blocked yet — open a video' : 'ads blocked';
+    stats.total === 0 ? 'nothing blocked yet - open a video' : 'ads blocked';
 
   byId('ssai-notice').hidden = stats.ssaiEncounters === 0;
 }
