@@ -10,6 +10,11 @@ export default defineConfig({
   srcDir: 'src',
   // Pinned because WXT would otherwise build Firefox as MV2.
   manifestVersion: 3,
+  // The marketing site is not extension source. Unlike `includeSources`, this
+  // list is merged with WXT's defaults rather than replacing them.
+  zip: {
+    excludeSources: ['site/**'],
+  },
   manifest: ({ browser }) => ({
     name: 'AdPrune',
     short_name: 'AdPrune',

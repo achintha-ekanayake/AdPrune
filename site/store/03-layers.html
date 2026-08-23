@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AdPrune - 03</title>
+    <link rel="stylesheet" href="shared.css" />
+    <style>
+      .board {
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        gap: 56px;
+        align-items: center;
+        padding: 56px 72px;
+      }
+      .copy {
+        display: grid;
+        gap: 22px;
+        justify-items: start;
+        align-content: center;
+      }
+      .copy h1 {
+        font-size: 46px;
+      }
+      .copy .sub {
+        max-width: 33ch;
+        font-size: 18.5px;
+      }
+
+      .right {
+        display: grid;
+        gap: 22px;
+        align-content: center;
+      }
+      .stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      .layer {
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        gap: 20px;
+        align-items: center;
+        padding: 30px 30px;
+      }
+
+      .num {
+        width: 54px;
+        height: 54px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: var(--accent-soft);
+        color: var(--accent-deep);
+        font-size: 22px;
+        font-weight: 690;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .layer-body {
+        display: grid;
+        gap: 5px;
+        min-width: 0;
+      }
+
+      .layer-top {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .layer-name {
+        font-size: 21px;
+        font-weight: 650;
+        letter-spacing: -0.01em;
+      }
+      .where {
+        padding: 2px 8px;
+        border-radius: 5px;
+        background: var(--surface-2);
+        color: var(--fg-2);
+        font: 600 12.5px var(--mono);
+        letter-spacing: 0.01em;
+      }
+      .layer-job {
+        font-size: 16.5px;
+        line-height: 1.4;
+        color: var(--muted);
+      }
+      .layer-job b {
+        color: var(--accent-deep);
+        font-weight: 650;
+      }
+
+      /* The primary defense is the one that gets the emphasis. */
+      .layer--lead {
+        border-color: #cfe3d1;
+        box-shadow: var(--shadow-product);
+      }
+      .layer--lead .num {
+        background: var(--accent);
+        color: var(--on-accent);
+      }
+
+      .footnote {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0;
+        padding: 0 4px;
+        font-size: 15px;
+        line-height: 1.45;
+        color: var(--muted);
+      }
+      .footnote b {
+        color: var(--fg-2);
+        font-weight: 640;
+      }
+      .footnote::before {
+        content: '';
+        width: 3px;
+        align-self: stretch;
+        flex: none;
+        background: var(--surface-2);
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="board">
+      <div class="copy">
+        <p class="eyebrow"><i></i> Defense in depth</p>
+        <h1>Four <em>independent</em> layers.</h1>
+        <p class="sub">
+          If one layer misses a newly renamed field, the next still gets you through.
+          Every hook installs inside its own try/catch, so the worst outcome is an ad
+          getting past &mdash; not video breaking.
+        </p>
+      </div>
+
+      <div class="right">
+        <div class="stack">
+          <div class="card layer layer--lead">
+            <span class="num">1</span>
+            <span class="layer-body">
+              <span class="layer-top">
+                <span class="layer-name">JSON pruning</span>
+                <span class="where">MAIN world</span>
+              </span>
+              <span class="layer-job"
+                >Strips ad metadata from InnerTube responses.
+                <b>Kills mid-rolls.</b></span
+              >
+            </span>
+          </div>
+
+          <div class="card layer">
+            <span class="num">2</span>
+            <span class="layer-body">
+              <span class="layer-top">
+                <span class="layer-name">Cosmetic + watchdog</span>
+                <span class="where">ISOLATED world</span>
+              </span>
+              <span class="layer-job"
+                >Hides page ad units; skips any ad that slipped past Layer 1.</span
+              >
+            </span>
+          </div>
+
+          <div class="card layer">
+            <span class="num">3</span>
+            <span class="layer-body">
+              <span class="layer-top">
+                <span class="layer-name">Background</span>
+                <span class="where">Service worker</span>
+              </span>
+              <span class="layer-job"
+                >Settings, stats, badge and ruleset toggling.</span
+              >
+            </span>
+          </div>
+
+          <div class="card layer">
+            <span class="num">4</span>
+            <span class="layer-body">
+              <span class="layer-top">
+                <span class="layer-name">Network rules</span>
+                <span class="where">declarativeNetRequest</span>
+              </span>
+              <span class="layer-job">Ad-network hosts and ad-tracking pings.</span>
+            </span>
+          </div>
+        </div>
+
+        <p class="footnote">
+          <span>
+            Chrome&rsquo;s MV3 dropped blocking <b>webRequest</b>, so Layer&nbsp;4 is
+            weaker there than on Firefox. Layer&nbsp;1 carries the load on both &mdash;
+            which is why the JSON layer, not the network layer, is the primary defense.
+          </span>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AdPrune - 02</title>
+    <link rel="stylesheet" href="shared.css" />
+    <style>
+      .board {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 32px;
+        align-content: start;
+        padding: 56px 72px;
+      }
+      .head {
+        display: grid;
+        gap: 14px;
+        justify-items: start;
+      }
+      .head h1 {
+        font-size: 46px;
+      }
+
+      .panel {
+        padding: 24px 28px 22px;
+        display: grid;
+        gap: 14px;
+        align-content: start;
+      }
+
+      .panel-head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--hairline);
+      }
+      .verb {
+        padding: 3px 9px;
+        border-radius: 6px;
+        background: var(--surface-2);
+        color: var(--fg-2);
+        font: 600 12px var(--mono);
+        letter-spacing: 0.02em;
+      }
+      .path {
+        font: 14.5px var(--mono);
+        color: var(--fg);
+      }
+      .panel-note {
+        margin-left: auto;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .fields {
+        display: grid;
+        gap: 7px;
+      }
+
+      .field {
+        display: grid;
+        grid-template-columns: 26px 1fr auto;
+        align-items: center;
+        gap: 14px;
+        padding: 11px 14px;
+        border-radius: 9px;
+        font: 15px var(--mono);
+      }
+      .field .glyph {
+        font-size: 15px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .field--cut {
+        background: var(--danger-soft);
+        color: var(--danger);
+      }
+      .field--cut .key {
+        text-decoration: line-through;
+        text-decoration-thickness: 1.5px;
+      }
+      .field--keep {
+        background: var(--accent-soft);
+        color: var(--accent-deep);
+      }
+
+      .tag {
+        font: 650 11px var(--font);
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
+
+      .rule {
+        height: 1px;
+        background: var(--hairline);
+        margin: 3px 0;
+      }
+
+      .outcome {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 2px;
+        padding: 14px 16px;
+        background: var(--fg);
+        color: #eaf1ea;
+        border-radius: 10px;
+        font-size: 15.5px;
+        line-height: 1.4;
+      }
+      .outcome b {
+        color: #9fd6a2;
+        font-weight: 650;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="board">
+      <div class="head">
+        <p class="eyebrow"><i></i> Layer 1 &middot; JSON pruning</p>
+        <h1>Mid-rolls are removed <em>at the source</em>.</h1>
+        <p class="sub sub--wide">
+          Ad metadata is stripped out of YouTube&rsquo;s
+          <span style="font-family: var(--mono); font-size: 17px"
+            >/youtubei/v1/player</span
+          >
+          response before the player reads its configuration &mdash; without touching
+          the fields that carry playback.
+        </p>
+      </div>
+
+      <div class="card panel">
+        <div class="panel-head">
+          <span class="verb">POST</span>
+          <span class="path">/youtubei/v1/player</span>
+          <span class="panel-note"
+            >intercepted in the page&rsquo;s own JavaScript realm, at
+            document_start</span
+          >
+        </div>
+
+        <div class="fields">
+          <div class="field field--cut">
+            <span class="glyph">&minus;</span
+            ><span class="key">"adPlacements": [ &hellip; ]</span
+            ><span class="tag">pruned</span>
+          </div>
+          <div class="field field--cut">
+            <span class="glyph">&minus;</span
+            ><span class="key">"playerAds": [ &hellip; ]</span
+            ><span class="tag">pruned</span>
+          </div>
+          <div class="field field--cut">
+            <span class="glyph">&minus;</span
+            ><span class="key">"adSlots": [ &hellip; ]</span
+            ><span class="tag">pruned</span>
+          </div>
+          <div class="field field--cut">
+            <span class="glyph">&minus;</span
+            ><span class="key">"adBreakHeartbeatParams": "&hellip;"</span
+            ><span class="tag">pruned</span>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="field field--keep">
+            <span class="glyph">&check;</span
+            ><span class="key">"streamingData": { &hellip; }</span
+            ><span class="tag">never touched</span>
+          </div>
+          <div class="field field--keep">
+            <span class="glyph">&check;</span
+            ><span class="key">"videoDetails": { &hellip; }</span
+            ><span class="tag">never touched</span>
+          </div>
+          <div class="field field--keep">
+            <span class="glyph">&check;</span
+            ><span class="key">"captions", "storyboards", "playabilityStatus"</span
+            ><span class="tag">never touched</span>
+          </div>
+        </div>
+
+        <div class="outcome">
+          <span
+            >No <b>adPlacements</b> means no ad break to schedule &mdash; there is no
+            Skip button, because there is nothing to skip.</span
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

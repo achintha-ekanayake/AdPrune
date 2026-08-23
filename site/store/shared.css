@@ -1,0 +1,195 @@
+/* AdPrune store screenshots.
+   Same tokens as the site and the popup: one accent, an 8pt scale, and exactly
+   one elevated element per board - the product itself. Artboards are locked to
+   1280x800, the Chrome Web Store listing size. */
+
+:root {
+  color-scheme: light;
+
+  --accent: #2e7d32;
+  --accent-deep: #1f5c23;
+  --accent-soft: #ecf5ed;
+  --on-accent: #ffffff;
+
+  --bg: #ffffff;
+  --surface: #f5f8f5;
+  --surface-2: #e9efea;
+  --hairline: #e0e6e1;
+
+  --fg: #10190f;
+  --fg-2: #3c4a3f;
+  --muted: #66746a;
+
+  --danger: #a1332b;
+  --danger-soft: #fbeeed;
+
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace;
+
+  --shadow-product:
+    0 2px 4px rgb(16 25 15 / 0.04), 0 14px 28px -10px rgb(16 25 15 / 0.12),
+    0 44px 80px -28px rgb(16 25 15 / 0.22);
+  --shadow-card: 0 1px 2px rgb(16 25 15 / 0.05), 0 6px 16px -8px rgb(16 25 15 / 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  width: 1280px;
+  height: 800px;
+  font-family: var(--font);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── artboard ───────────────────────────────────────────────────────────── */
+
+.board {
+  position: relative;
+  width: 1280px;
+  height: 800px;
+  padding: 64px 72px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* A single soft wash anchors the composition without competing with the UI. */
+.board::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(760px 520px at 88% -8%, #e7f1e8 0%, rgb(231 241 232 / 0) 62%),
+    radial-gradient(620px 460px at -6% 106%, #eef4ef 0%, rgb(238 244 239 / 0) 60%);
+}
+
+.board > * {
+  position: relative;
+}
+
+.board--tint {
+  background: var(--surface);
+}
+
+/* ── brand lockup ───────────────────────────────────────────────────────── */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 640;
+  letter-spacing: -0.015em;
+}
+
+.brand svg {
+  width: 26px;
+  height: 26px;
+  color: var(--accent);
+  flex: none;
+}
+
+/* ── type ───────────────────────────────────────────────────────────────── */
+
+.eyebrow {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 5px 13px 5px 11px;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.eyebrow i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+h1 {
+  margin: 0;
+  font-size: 52px;
+  line-height: 1.06;
+  font-weight: 690;
+  letter-spacing: -0.032em;
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.sub {
+  margin: 0;
+  max-width: 34ch;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+
+.sub--wide {
+  max-width: 78ch;
+}
+
+/* ── check list ─────────────────────────────────────────────────────────── */
+
+.checks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 16.5px;
+  line-height: 1.4;
+  color: var(--fg-2);
+}
+
+.checks svg {
+  width: 19px;
+  height: 19px;
+  margin-top: 1px;
+  color: var(--accent);
+  flex: none;
+}
+
+/* ── generic card ───────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.caption {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 640;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

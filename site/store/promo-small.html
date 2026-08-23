@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AdPrune - small promo tile</title>
+    <style>
+      /* AdPrune small promo tile - 440x280, the Chrome Web Store grid size.
+         Self-contained: shared.css locks the artboard to 1280x800, so the tile
+         restates the same tokens at tile scale. Deep-green field so the tile
+         holds its edge against the store's white listing grid. */
+
+      :root {
+        color-scheme: light;
+        --accent: #2e7d32;
+        --accent-deep: #1f5c23;
+        --mint: #bfe3c2;
+        --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      body {
+        width: 440px;
+        height: 280px;
+        font-family: var(--font);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .tile {
+        position: relative;
+        width: 440px;
+        height: 280px;
+        padding: 30px 34px;
+        display: grid;
+        align-content: center;
+        gap: 18px;
+        background: linear-gradient(142deg, #24672a 0%, #1b5320 58%, #16441b 100%);
+        overflow: hidden;
+      }
+
+      /* One soft highlight keeps the field from reading as flat ink. */
+      .tile::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            420px 300px at 86% -14%,
+            rgb(180 226 184 / 0.3) 0%,
+            rgb(180 226 184 / 0) 66%
+          ),
+          radial-gradient(
+            360px 260px at -8% 112%,
+            rgb(12 40 14 / 0.42) 0%,
+            rgb(12 40 14 / 0) 62%
+          );
+      }
+
+      /* A hairline inner edge so the tile still has a boundary on white. */
+      .tile::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
+      }
+
+      .tile > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        color: #fff;
+        font-size: 25px;
+        font-weight: 640;
+        letter-spacing: -0.02em;
+      }
+
+      .brand svg {
+        width: 34px;
+        height: 34px;
+        flex: none;
+      }
+
+      h1 {
+        margin: 0;
+        color: #fff;
+        font-size: 35px;
+        line-height: 1.08;
+        font-weight: 690;
+        letter-spacing: -0.032em;
+      }
+
+      h1 em {
+        font-style: normal;
+        color: var(--mint);
+      }
+
+      .foot {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0;
+        color: rgb(255 255 255 / 0.72);
+        font-size: 13.5px;
+        font-weight: 560;
+        letter-spacing: 0.005em;
+      }
+
+      .foot i {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--mint);
+        flex: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tile">
+      <div class="brand">
+        <!-- Inverted lockup: white badge, green play and slash. -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="1" y="1" width="22" height="22" rx="5.5" fill="#fff" />
+          <path d="M9 7.4 L15.6 12 L9 16.6 Z" fill="#24672a" />
+          <line x1="4" y1="20" x2="20" y2="4" stroke="#fff" stroke-width="5" />
+          <line
+            x1="4"
+            y1="20"
+            x2="20"
+            y2="4"
+            stroke="#24672a"
+            stroke-width="2.2"
+            stroke-linecap="round"
+          />
+        </svg>
+        AdPrune
+      </div>
+
+      <h1>YouTube ads<br /><em>never load.</em></h1>
+
+      <p class="foot"><i></i> Open source &middot; No data collected</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AdPrune - 05</title>
+    <link rel="stylesheet" href="shared.css" />
+    <style>
+      .board {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        gap: 30px;
+        align-content: space-between;
+        padding: 56px 72px;
+      }
+      .head {
+        display: grid;
+        gap: 16px;
+        justify-items: start;
+      }
+      .head h1 {
+        font-size: 46px;
+      }
+
+      .cols {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .col {
+        padding: 24px 24px 26px;
+        display: grid;
+        gap: 16px;
+        align-content: start;
+      }
+      .col-title {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+      .col-title svg {
+        width: 18px;
+        height: 18px;
+        color: var(--accent);
+        flex: none;
+      }
+      .col-title span {
+        font-size: 15px;
+        font-weight: 650;
+        letter-spacing: -0.005em;
+      }
+
+      .items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 12px;
+      }
+      .items li {
+        display: grid;
+        gap: 2px;
+      }
+      .code {
+        font: 13.5px var(--mono);
+        color: var(--fg);
+      }
+      .why {
+        font-size: 13px;
+        line-height: 1.4;
+        color: var(--muted);
+      }
+
+      .items li.no {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 14px;
+        color: var(--fg-2);
+      }
+      .items li.no::before {
+        content: '';
+        width: 13px;
+        height: 1.5px;
+        flex: none;
+        background: var(--muted);
+        border-radius: 1px;
+      }
+
+      .banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        padding: 22px 28px;
+        background: var(--fg);
+        color: #eaf1ea;
+        border-radius: 14px;
+      }
+      .banner-lead {
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.35;
+        font-weight: 620;
+        letter-spacing: -0.01em;
+      }
+      .banner-lead b {
+        color: #9fd6a2;
+        font-weight: 620;
+      }
+      .badges {
+        display: flex;
+        gap: 10px;
+        flex: none;
+      }
+      .badge {
+        padding: 7px 14px;
+        border-radius: 999px;
+        background: rgb(255 255 255 / 0.1);
+        font-size: 13.5px;
+        font-weight: 600;
+        color: #eaf1ea;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="board">
+      <div class="head">
+        <p class="eyebrow"><i></i> Privacy</p>
+        <h1>Two permissions. <em>Zero</em> data collection.</h1>
+        <p class="sub sub--wide">
+          AdPrune originates no network requests of its own. There is no account, no
+          sign-in, no analytics and no server to send anything to.
+        </p>
+      </div>
+
+      <div class="cols">
+        <div class="card col">
+          <span class="col-title">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3l7 3v6c0 4.4-3 8-7 9-4-1-7-4.6-7-9V6z" />
+            </svg>
+            <span>Permissions requested</span>
+          </span>
+          <ul class="items">
+            <li>
+              <span class="code">storage</span>
+              <span class="why">Keeps your toggles and counters on your device.</span>
+            </li>
+            <li>
+              <span class="code">declarativeNetRequest</span>
+              <span class="why"
+                >Static rules for ad-network hosts. The browser applies them; AdPrune
+                never sees the requests.</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="card col">
+          <span class="col-title">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18" />
+            </svg>
+            <span>Runs only on</span>
+          </span>
+          <ul class="items">
+            <li><span class="code">youtube.com</span></li>
+            <li><span class="code">youtube-nocookie.com</span></li>
+            <li><span class="code">googlevideo.com</span></li>
+          </ul>
+          <span class="why"
+            >Every other site you visit is out of reach &mdash; the extension is not
+            loaded there at all.</span
+          >
+        </div>
+
+        <div class="card col">
+          <span class="col-title">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M5.6 5.6l12.8 12.8" />
+            </svg>
+            <span>Never collected</span>
+          </span>
+          <ul class="items">
+            <li class="no">Browsing or watch history</li>
+            <li class="no">Personal or identifying information</li>
+            <li class="no">Location data of any kind</li>
+            <li class="no">Cookies or session tokens</li>
+            <li class="no">Analytics and telemetry</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="banner">
+        <p class="banner-lead">
+          Open source under the MIT licence &mdash;
+          <b>read every line before you install it.</b>
+        </p>
+        <div class="badges">
+          <span class="badge">Manifest V3</span>
+          <span class="badge">No remote code</span>
+          <span class="badge">Chrome &middot; Edge &middot; Firefox</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

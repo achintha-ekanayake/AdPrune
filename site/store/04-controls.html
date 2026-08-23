@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AdPrune - 04</title>
+    <link rel="stylesheet" href="shared.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <style>
+      .board {
+        display: grid;
+        grid-template-columns: 1fr 520px;
+        gap: 56px;
+        align-items: center;
+        padding: 56px 72px;
+      }
+      .copy {
+        display: grid;
+        gap: 24px;
+        justify-items: start;
+        align-content: center;
+      }
+      .copy h1 {
+        font-size: 46px;
+      }
+      .copy .sub {
+        max-width: 35ch;
+      }
+      .stage {
+        display: flex;
+        justify-content: center;
+      }
+      .popup {
+        zoom: 1.26;
+      }
+
+      .honest {
+        display: grid;
+        gap: 7px;
+        padding: 18px 20px;
+        background: var(--surface);
+        border-left: 3px solid var(--accent);
+        border-radius: 10px;
+        max-width: 46ch;
+      }
+      .honest-title {
+        font-size: 15.5px;
+        font-weight: 650;
+      }
+      .honest p {
+        margin: 0;
+        font-size: 14.5px;
+        line-height: 1.45;
+        color: var(--fg-2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="board">
+      <div class="copy">
+        <p class="eyebrow"><i></i> Control</p>
+        <h1>Every layer switches off <em>on its own</em>.</h1>
+        <p class="sub">
+          Six toggles, grouped by consequence. Turn off a single layer when a page
+          misbehaves, instead of disabling the whole extension.
+        </p>
+
+        <div class="honest">
+          <span class="honest-title">And it tells you when it can&rsquo;t help</span>
+          <p>
+            When YouTube stitches an ad into the media stream itself, no browser
+            extension can cleanly remove it. AdPrune detects that case and says so,
+            rather than silently appearing broken.
+          </p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="popup">
+          <div class="header">
+            <div class="brand">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="1" y="1" width="22" height="22" rx="5.5" fill="currentColor" />
+                <path d="M9 7.4 L15.6 12 L9 16.6 Z" fill="#fff" />
+                <line
+                  x1="4"
+                  y1="20"
+                  x2="20"
+                  y2="4"
+                  stroke="currentColor"
+                  stroke-width="5"
+                />
+                <line
+                  x1="4"
+                  y1="20"
+                  x2="20"
+                  y2="4"
+                  stroke="#fff"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              AdPrune
+            </div>
+            <span class="sw on"></span>
+          </div>
+
+          <p class="notice">
+            <strong>Server-stitched ads detected.</strong> These are baked into the
+            video stream itself and cannot be removed from the browser.
+          </p>
+
+          <div class="group">
+            <p class="group-title">Blocking</p>
+            <div class="rows">
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Block video ads</span>
+                  <span class="row-hint"
+                    >Removes pre-roll, mid-roll and post-roll before the player
+                    schedules them.</span
+                  >
+                </span>
+                <span class="sw on"></span>
+              </div>
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Hide page ads</span>
+                  <span class="row-hint"
+                    >Promoted shelves, banners and in-feed ad cards.</span
+                  >
+                </span>
+                <span class="sw on"></span>
+              </div>
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Dismiss anti-adblock popups</span>
+                  <span class="row-hint"
+                    >Closes the &ldquo;ad blockers violate Terms of Service&rdquo;
+                    dialog.</span
+                  >
+                </span>
+                <span class="sw on"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <p class="group-title">Advanced</p>
+            <div class="rows">
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Skip-ad fallback</span>
+                  <span class="row-hint"
+                    >Catches an ad that slipped past the main filter.</span
+                  >
+                </span>
+                <span class="sw on"></span>
+              </div>
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Block ad network requests</span>
+                  <span class="row-hint"
+                    >Network-level rules for ad and tracking endpoints.</span
+                  >
+                </span>
+                <span class="sw on"></span>
+              </div>
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Debug logging</span>
+                  <span class="row-hint"
+                    >Verbose console output. Leave off for normal use.</span
+                  >
+                </span>
+                <span class="sw"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ghost">Reset counters</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AdPrune - 01</title>
+    <link rel="stylesheet" href="shared.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <style>
+      .board {
+        display: grid;
+        grid-template-columns: 1fr 440px;
+        gap: 56px;
+        align-items: center;
+        padding: 56px 72px;
+      }
+      .copy {
+        display: grid;
+        gap: 26px;
+        align-content: center;
+      }
+      .stage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .popup {
+        zoom: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="board">
+      <div class="copy">
+        <div class="brand">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="1" y="1" width="22" height="22" rx="5.5" fill="currentColor" />
+            <path d="M9 7.4 L15.6 12 L9 16.6 Z" fill="#fff" />
+            <line
+              x1="4"
+              y1="20"
+              x2="20"
+              y2="4"
+              stroke="currentColor"
+              stroke-width="5"
+            />
+            <line
+              x1="4"
+              y1="20"
+              x2="20"
+              y2="4"
+              stroke="#fff"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            />
+          </svg>
+          AdPrune
+        </div>
+
+        <p class="eyebrow"><i></i> Open source &middot; Chrome, Edge &amp; Firefox</p>
+
+        <h1>The ad break <em>never gets</em> scheduled.</h1>
+
+        <p class="sub">
+          AdPrune deletes ad metadata from YouTube&rsquo;s player response before the
+          player reads it. Nothing to skip, nothing to wait out.
+        </p>
+
+        <ul class="checks">
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            Pre-roll, mid-roll and post-roll video ads
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            Promoted shelves, banners and in-feed ad cards
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            Two permissions, zero data collection, MIT licensed
+          </li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <div class="popup">
+          <div class="header">
+            <div class="brand">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="1" y="1" width="22" height="22" rx="5.5" fill="currentColor" />
+                <path d="M9 7.4 L15.6 12 L9 16.6 Z" fill="#fff" />
+                <line
+                  x1="4"
+                  y1="20"
+                  x2="20"
+                  y2="4"
+                  stroke="currentColor"
+                  stroke-width="5"
+                />
+                <line
+                  x1="4"
+                  y1="20"
+                  x2="20"
+                  y2="4"
+                  stroke="#fff"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              AdPrune
+            </div>
+            <span class="sw on"></span>
+          </div>
+
+          <div class="hero">
+            <p class="status"><i></i> Active</p>
+            <p class="hero-value">1,284</p>
+            <p class="hero-label">ads blocked</p>
+            <div class="split">
+              <div class="split-cell">
+                <span class="split-value">412</span>
+                <span class="split-label">video ads</span>
+              </div>
+              <div class="split-cell">
+                <span class="split-value">872</span>
+                <span class="split-label">page ads</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <p class="group-title">Blocking</p>
+            <div class="rows">
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Block video ads</span>
+                  <span class="row-hint"
+                    >Removes pre-roll, mid-roll and post-roll before the player
+                    schedules them.</span
+                  >
+                </span>
+                <span class="sw on"></span>
+              </div>
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Hide page ads</span>
+                  <span class="row-hint"
+                    >Promoted shelves, banners and in-feed ad cards.</span
+                  >
+                </span>
+                <span class="sw on"></span>
+              </div>
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Dismiss anti-adblock popups</span>
+                  <span class="row-hint"
+                    >Closes the &ldquo;ad blockers violate Terms of Service&rdquo;
+                    dialog.</span
+                  >
+                </span>
+                <span class="sw on"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <p class="group-title">Advanced</p>
+            <div class="rows">
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Skip-ad fallback</span>
+                  <span class="row-hint"
+                    >Catches an ad that slipped past the main filter.</span
+                  >
+                </span>
+                <span class="sw on"></span>
+              </div>
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Block ad network requests</span>
+                  <span class="row-hint"
+                    >Network-level rules for ad and tracking endpoints.</span
+                  >
+                </span>
+                <span class="sw on"></span>
+              </div>
+              <div class="row">
+                <span class="row-text">
+                  <span class="row-title">Debug logging</span>
+                  <span class="row-hint"
+                    >Verbose console output. Leave off for normal use.</span
+                  >
+                </span>
+                <span class="sw"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ghost">Reset counters</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

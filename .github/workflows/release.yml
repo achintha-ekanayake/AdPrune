@@ -1,0 +1,72 @@
+name: Release
+
+# Builds the Chrome and Firefox packages plus the AMO source archive, and
+# attaches them to the GitHub release. Publishing a release is the trigger, so
+# the tag is the single source of truth for what shipped.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # The same gate as CI. A build that cannot pass the core suite is not a
+      # build worth publishing.
+      - run: npm test
+      - run: npm run compile
+      - run: npm run lint
+
+      # The version is baked into every zip filename, so a tag that disagrees
+      # with package.json would ship artifacts that lie about their contents.
+      - name: Verify tag matches package.json
+        if: github.event_name == 'release'
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          pkg="$(node -p "require('./package.json').version")"
+          if [ "$tag" != "$pkg" ]; then
+            echo "::error::Tag ${GITHUB_REF_NAME} does not match package.json version ${pkg}"
+            exit 1
+          fi
+          echo "Tag and package.json agree on ${pkg}"
+
+      - name: Build Chrome package
+        run: npm run zip
+
+      # Firefox is also what produces the source archive AMO requires, because
+      # WXT only zips sources for the browsers that ask for them.
+      - name: Build Firefox package and source archive
+        run: npm run zip:firefox
+
+      - name: Show artifacts
+        run: ls -lh .output/*.zip
+
+      # Kept regardless of trigger, so a workflow_dispatch run is still useful
+      # for checking a build before cutting the release.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: adprune-packages
+          path: .output/*.zip
+          if-no-files-found: error
+          retention-days: 30
+
+      # gh is preinstalled on the runner, so no third-party action is trusted
+      # with a write-scoped token.
+      - name: Attach packages to the release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$GITHUB_REF_NAME" .output/*.zip --clobber
